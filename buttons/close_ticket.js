@@ -94,7 +94,7 @@ module.exports = {
             };
 
             const data = {
-                bot_token: env.TOKEN
+                bot_token: config.token
             };
 
             const params = new URLSearchParams({
