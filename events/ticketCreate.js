@@ -20,6 +20,8 @@ const fetch = require("node-fetch");
 
 const config = require("../config");
 
+const TOKEN = process.env.TOKEN;
+
 module.exports = {
     name: Events.InteractionCreate,
 
@@ -211,7 +213,7 @@ While you wait, please provide the following information:
                         };
 
                         const data = {
-                            bot_token: config.token
+                            bot_token: env.TOKEN
                         };
 
                         const params = new URLSearchParams({
@@ -430,7 +432,7 @@ While you wait, please provide the following information:
                 };
 
                 const data = {
-                    bot_token: config.token
+                    bot_token: env.TOKEN
                 };
 
                 const params = new URLSearchParams({
