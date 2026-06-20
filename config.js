@@ -1,6 +1,6 @@
 module.exports = {
     mongoURI: "mongodb+srv://kamdynlovesfootball_db_user:HpZvkE1XrOlhv52H@cluster0.zytux9c.mongodb.net/",
-    clientId: "1507727774524248194",
+    clientId: "1517886043649474661",
     cookieApiKey: "sk_live_3R8FKNtvKUk2JiW3ApdQ8veIyr5eCpmv9ML6pEf7iqFq3pb9uiP7fYKcWLQcd58b",
     docksysApiKey: "I6NbvPgioSb9.RTiDYf.INZpA7KJBIYcc6xaDMf386p385wr",
 
