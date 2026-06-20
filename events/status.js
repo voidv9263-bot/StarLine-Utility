@@ -5,7 +5,7 @@ const {
 
 const WATCH_BOT_ID = "1517577280434475141";
 const STATUS_CHANNEL_ID = "1517908894612197436";
-const STATUS_MESSAGE_ID = null; // Put the message ID here after first startup
+const STATUS_MESSAGE_ID = "1517911017802301606"; // Put the message ID here after first startup
 
 module.exports = {
     name: Events.ClientReady,
