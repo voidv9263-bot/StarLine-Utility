@@ -12,6 +12,7 @@ const {
 
 const fetch = require("node-fetch");
 const config = require("../config");
+const config = require("../.env");
 
 module.exports = {
     customId: "close_ticket",
