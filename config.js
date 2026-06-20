@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 module.exports = {
     token: process.env.TOKEN,
     mongoURI: "mongodb+srv://kamdynlovesfootball_db_user:HpZvkE1XrOlhv52H@cluster0.zytux9c.mongodb.net/",
