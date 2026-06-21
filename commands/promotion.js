@@ -27,7 +27,7 @@ module.exports = {
         .addUserOption(option =>
             option
                 .setName("user")
-                .setDescription("Member")
+                .setDescription("Member being promoted")
                 .setRequired(true)
         )
         .addStringOption(option =>
@@ -42,10 +42,10 @@ module.exports = {
                 .setDescription("New rank")
                 .setRequired(true)
         )
-         .addStringOption(option =>
+        .addStringOption(option =>
             option
                 .setName("reason")
-                .setDescription("Reason for the infraction")
+                .setDescription("Reason for the promotion")
                 .setRequired(true)
         ),
 
@@ -65,6 +65,7 @@ module.exports = {
         const user = interaction.options.getUser("user");
         const oldRank = interaction.options.getString("oldrank");
         const newRank = interaction.options.getString("newrank");
+        const reason = interaction.options.getString("reason");
 
         const channel = interaction.guild.channels.cache.get(CHANNEL_ID);
 
@@ -78,7 +79,7 @@ module.exports = {
         const container = new ContainerBuilder()
             .addTextDisplayComponents(
                 new TextDisplayBuilder()
-                    .setContent("# StarLine Promotion")
+                    .setContent("# ⭐ StarLine Promotion")
             )
             .addSeparatorComponents(
                 new SeparatorBuilder()
@@ -86,18 +87,18 @@ module.exports = {
             .addTextDisplayComponents(
                 new TextDisplayBuilder()
                     .setContent(
-`Member
+`**Member:**
 ${user}
-Previous Rank
+**Previous Rank:**
 ${oldRank}
-New Rank
+**New Rank:**
 ${newRank}
-Reason
+**Reason:**
 ${reason}
-Promoted By
+**Promoted By:**
 ${interaction.user}
 
-### Date
+**Date:**
 <t:${Math.floor(Date.now() / 1000)}:F>`
                     )
             );
