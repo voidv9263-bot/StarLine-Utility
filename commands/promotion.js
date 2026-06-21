@@ -10,7 +10,8 @@ const {
 // CONFIG
 // =========================
 
-"1518046067558580326",
+const ALLOWED_ROLES = [
+    "1518046067558580326",
     "1518046228229783562",
     "1517580278376435882"
 ];
@@ -44,8 +45,8 @@ module.exports = {
 
     async execute(interaction) {
 
-        const hasRole = ALLOWED_ROLES.some(role =>
-            interaction.member.roles.cache.has(role)
+        const hasRole = ALLOWED_ROLES.some(roleId =>
+            interaction.member.roles.cache.has(roleId)
         );
 
         if (!hasRole) {
@@ -61,17 +62,21 @@ module.exports = {
 
         const channel = interaction.guild.channels.cache.get(CHANNEL_ID);
 
-        const container = new ContainerBuilder()
+        if (!channel) {
+            return interaction.reply({
+                content: "❌ Promotion channel not found.",
+                ephemeral: true
+            });
+        }
 
+        const container = new ContainerBuilder()
             .addTextDisplayComponents(
                 new TextDisplayBuilder()
                     .setContent("# StarLine Promotion")
             )
-
             .addSeparatorComponents(
                 new SeparatorBuilder()
             )
-
             .addTextDisplayComponents(
                 new TextDisplayBuilder()
                     .setContent(
@@ -93,12 +98,12 @@ ${interaction.user}
             );
 
         await channel.send({
-            flags: MessageFlags.IsComponentsV2,
-            components: [container]
+            components: [container],
+            flags: MessageFlags.IsComponentsV2
         });
 
         await interaction.reply({
-            content: "✅ Promotion sent.",
+            content: "✅ Promotion sent successfully.",
             ephemeral: true
         });
     }
