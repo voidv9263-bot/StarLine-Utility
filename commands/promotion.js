@@ -41,6 +41,12 @@ module.exports = {
                 .setName("newrank")
                 .setDescription("New rank")
                 .setRequired(true)
+        )
+         .addStringOption(option =>
+            option
+                .setName("reason")
+                .setDescription("Reason for the infraction")
+                .setRequired(true)
         ),
 
     async execute(interaction) {
@@ -80,16 +86,15 @@ module.exports = {
             .addTextDisplayComponents(
                 new TextDisplayBuilder()
                     .setContent(
-`### Member
+`Member
 ${user}
-
-### Previous Rank
+Previous Rank
 ${oldRank}
-
-### New Rank
+New Rank
 ${newRank}
-
-### Promoted By
+Reason
+${reason}
+Promoted By
 ${interaction.user}
 
 ### Date
