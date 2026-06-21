@@ -86,16 +86,16 @@ module.exports = {
             .addTextDisplayComponents(
                 new TextDisplayBuilder()
                     .setContent(
-`Member
+`**Member:**
 ${user}
-Action
+**Action:**
 ${action}
-Reason
+**Reason:**
 ${reason}
-Moderator
+**Moderator:**
 ${interaction.user}
 
-Date
+**Date:**
 <t:${Math.floor(Date.now() / 1000)}:F>`
                     )
             );
