@@ -10,7 +10,7 @@ const {
 // CONFIG
 // =========================
 
-onst ALLOWED_ROLES = [
+const ALLOWED_ROLES = [
     "1518046067558580326",
     "1518046228229783562",
     "1517580278376435882"
@@ -45,14 +45,14 @@ module.exports = {
         .addStringOption(option =>
             option
                 .setName("reason")
-                .setDescription("Reason")
+                .setDescription("Reason for the infraction")
                 .setRequired(true)
         ),
 
     async execute(interaction) {
 
-        const hasRole = ALLOWED_ROLES.some(role =>
-            interaction.member.roles.cache.has(role)
+        const hasRole = ALLOWED_ROLES.some(roleId =>
+            interaction.member.roles.cache.has(roleId)
         );
 
         if (!hasRole) {
@@ -68,17 +68,21 @@ module.exports = {
 
         const channel = interaction.guild.channels.cache.get(CHANNEL_ID);
 
-        const container = new ContainerBuilder()
+        if (!channel) {
+            return interaction.reply({
+                content: "❌ Infraction channel not found.",
+                ephemeral: true
+            });
+        }
 
+        const container = new ContainerBuilder()
             .addTextDisplayComponents(
                 new TextDisplayBuilder()
                     .setContent("# StarLine Infraction")
             )
-
             .addSeparatorComponents(
                 new SeparatorBuilder()
             )
-
             .addTextDisplayComponents(
                 new TextDisplayBuilder()
                     .setContent(
@@ -100,12 +104,12 @@ ${interaction.user}
             );
 
         await channel.send({
-            flags: MessageFlags.IsComponentsV2,
-            components: [container]
+            components: [container],
+            flags: MessageFlags.IsComponentsV2
         });
 
         await interaction.reply({
-            content: "✅ Infraction sent.",
+            content: "✅ Infraction sent successfully.",
             ephemeral: true
         });
     }
