@@ -72,7 +72,7 @@ module.exports = {
 
             .addTextDisplayComponents(
                 new TextDisplayBuilder()
-                    .setContent("# 🚨 Staff Infraction")
+                    .setContent("# StarLine Infraction")
             )
 
             .addSeparatorComponents(
