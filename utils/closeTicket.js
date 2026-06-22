@@ -82,7 +82,6 @@ async function closeTicket(interaction) {
 ### Ticket Information
 
 - Ticket: ${interaction.channel.name}
-- Closed By: <@${interaction.user.id}>
 - Ticket Owner: <@${ticketOwnerId}>`
                 )
             )
