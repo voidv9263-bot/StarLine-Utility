@@ -491,7 +491,6 @@ While you wait, please provide the following information:
 ### Ticket Information
 
 - Ticket: ${interaction.channel.name}
-- Closed By: <@${interaction.user.id}>
 - Ticket Owner: <@${ticketOwnerId}>`
                         )
                     )
