@@ -144,7 +144,6 @@ module.exports = {
 `# Ticket Closed
 
 - Ticket: ${interaction.channel.name}
-- Closed By: <@${interaction.user.id}>
 - Owner: <@${ticketOwnerId}>`
                     )
                 )
