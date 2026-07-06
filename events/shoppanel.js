@@ -8,6 +8,8 @@ const {
     MediaGalleryBuilder,
     TextDisplayBuilder,
     SeparatorBuilder,
+    ActionRowBuilder,
+
     ButtonBuilder,
     ButtonStyle,
 
@@ -52,7 +54,7 @@ module.exports = {
         }
 
         // =========================
-        // CHECK IF PANEL EXISTS
+        // CHECK EXISTING PANEL
         // =========================
 
         if (savedData?.messageId) {
@@ -67,7 +69,7 @@ module.exports = {
         }
 
         // =========================
-        // SHOP SELECT MENU
+        // SELECT MENU
         // =========================
 
         const select = new StringSelectMenuBuilder()
@@ -90,6 +92,8 @@ module.exports = {
                     .setValue("raids")
             );
 
+        const selectRow = new ActionRowBuilder().addComponents(select);
+
         // =========================
         // PRICES BUTTON
         // =========================
@@ -99,13 +103,15 @@ module.exports = {
             .setLabel("Prices")
             .setStyle(ButtonStyle.Secondary);
 
+        const buttonRow = new ActionRowBuilder().addComponents(pricesButton);
+
         // =========================
-        // V2 CONTAINER
+        // CONTAINER V2
         // =========================
 
         const container = new ContainerBuilder()
 
-            // TOP BANNER
+            // TOP IMAGE
             .addMediaGalleryComponents(
                 new MediaGalleryBuilder().addItems({
                     media: {
@@ -114,9 +120,7 @@ module.exports = {
                 })
             )
 
-            .addSeparatorComponents(
-                new SeparatorBuilder()
-            )
+            .addSeparatorComponents(new SeparatorBuilder())
 
             // TEXT
             .addTextDisplayComponents(
@@ -125,7 +129,7 @@ module.exports = {
 
 Welcome to the Royal Dominion Shop!
 
-Purchase our in-game services quickly and securely by opening a shop ticket.
+Purchase services quickly and securely by opening a shop ticket.
 
 ## Available Categories
 • Swords and Guns
@@ -133,32 +137,28 @@ Purchase our in-game services quickly and securely by opening a shop ticket.
 • Raids
 
 ## Before Opening a Ticket
-• Select the correct category.
-• Explain exactly what you'd like to purchase.
-• Wait for a staff member to assist you.
-• Payments are handled only through official staff.
+• Select the correct category
+• Explain what you want clearly
+• Wait for staff assistance
+• Payments are handled only by staff
 
-Use the menu below to open a private shop ticket.
+Use the menu below to open a ticket.
 
-Need to see our pricing first? Click the **Prices** button below.`
+Click **Prices** to view pricing information.`
                 )
             )
 
-            .addSeparatorComponents(
-                new SeparatorBuilder()
-            )
+            .addSeparatorComponents(new SeparatorBuilder())
 
-            // SELECT MENU
-            .addActionRowComponents(select)
+            // SELECT MENU ROW (MUST BE ACTION ROW)
+            .addActionRowComponents(selectRow)
 
-            // PRICES BUTTON
-            .addActionRowComponents(pricesButton)
+            // BUTTON ROW (MUST BE SEPARATE ACTION ROW)
+            .addActionRowComponents(buttonRow)
 
-            .addSeparatorComponents(
-                new SeparatorBuilder()
-            )
+            .addSeparatorComponents(new SeparatorBuilder())
 
-            // BOTTOM BANNER
+            // BOTTOM IMAGE
             .addMediaGalleryComponents(
                 new MediaGalleryBuilder().addItems({
                     media: {
@@ -179,9 +179,7 @@ Need to see our pricing first? Click the **Prices** button below.`
         fs.writeFileSync(
             savePath,
             JSON.stringify(
-                {
-                    messageId: message.id
-                },
+                { messageId: message.id },
                 null,
                 4
             )
