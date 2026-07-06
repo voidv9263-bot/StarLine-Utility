@@ -31,22 +31,51 @@ module.exports = {
             // Prices
             .addTextDisplayComponents(
                 new TextDisplayBuilder().setContent(`
-# 💰 StarLine Shop Prices
+# 💰 Royal Dominion Prices
 
 ## ⚔️ Swords
-• Item 1 — **$5**
-• Item 2 — **$10**
+• Shark Anchor - $2
+• True Triple Katana - $4
+• Cursed Dual Katana - $5
+• Guns
+• Soul Guitar - $2
+• Acidium Rifle - $3
+• Kabucha - $1
+• Fighting Styles
+• God Human - $3
+• Super Human - $1
+
+## 🔫 Guns
+• Soul Guitar - $2
+• Acidium Rifle - $3
+• Kabucha - $1
+• Fighting Styles
+• God Human - $3
+• Super Human - $1
 
 ## 🔥 V4
-• Full V4 — **$15**
-• Trial — **$8**
+• Human - $3
+• Shark - $3
+• Mink - $3
+• Angel- $3
+• Cyborg- $4
+• Ghoul  - $4
+• Draco - $7
 
 ## 🏝️ Raids
-• Normal Raid — **$3**
-• Advanced Raid — **$6**
+• 1 raid - 1 legendary fruit
+• 5 raids - 1 mythical fruit 
+• 10 raids - 2 mythical fruits
+• 15 raids - 3 mythical fruits
+• 20 raids - 4 mythical fruits 
+• 50 raids - 9 mythical fruits
+
+## 🏝️ Law Raids
+• 1 - 1 high-tier Legendary
+• 4+ 2 mythical fruits 
 
 ## 📌 Information
-• Payments are handled only through official staff.
+• Payments are taken in Robux or CashApp
 • Prices are subject to change.
 • Open a shop ticket to purchase.
 `)
