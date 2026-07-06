@@ -76,17 +76,17 @@ module.exports = {
             .setPlaceholder("Select a shop category...")
             .addOptions(
                 new StringSelectMenuOptionBuilder()
-                    .setLabel("⚔️ Swords")
+                    .setLabel("Swords and Guns")
                     .setDescription("Purchase swords")
                     .setValue("swords"),
 
                 new StringSelectMenuOptionBuilder()
-                    .setLabel("🔥 V4")
+                    .setLabel("V4")
                     .setDescription("Purchase V4 services")
                     .setValue("v4"),
 
                 new StringSelectMenuOptionBuilder()
-                    .setLabel("🏝️ Raids")
+                    .setLabel("Raids")
                     .setDescription("Purchase raid services")
                     .setValue("raids")
             );
@@ -99,7 +99,7 @@ module.exports = {
 
         const pricesButton = new ButtonBuilder()
             .setCustomId("shop_prices")
-            .setLabel("💰 Prices")
+            .setLabel("Prices")
             .setStyle(ButtonStyle.Secondary);
 
         const buttonRow = new ActionRowBuilder().addComponents(pricesButton);
@@ -133,9 +133,9 @@ Welcome to the Royal Dominion Shop!
 Purchase our in-game services quickly and securely by opening a shop ticket.
 
 Available Categories:
-• ⚔️ Swords
-• 🔥 V4 Services
-• 🏝️ Raids
+• Swords and guns
+• V4 Services
+• Raids
 
 Before opening a ticket:
 • Select the correct category.
@@ -145,7 +145,7 @@ Before opening a ticket:
 
 Use the menu below to open a private shop ticket.
 
-Need to see our pricing first? Click the **💰 Prices** button below.`
+Need to see our pricing first? Click the **Prices** button below.`
                 )
             )
 
