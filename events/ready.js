@@ -11,7 +11,7 @@ module.exports = {
         client.user.setStatus("dnd");
 
         // Set activity
-        client.user.setActivity("over StarLine", {
+        client.user.setActivity("over Royal Dominion", {
             type: ActivityType.Watching
         });
     }
