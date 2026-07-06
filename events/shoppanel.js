@@ -162,7 +162,7 @@ Need to see our pricing first? Click the **Prices** button below.`
             .addMediaGalleryComponents(
                 new MediaGalleryBuilder().addItems({
                     media: {
-                        url: config.shopBanner
+                        url: config.shopbottom
                     }
                 })
             );
