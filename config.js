@@ -35,5 +35,27 @@ module.exports = {
             categoryId: "1515514456694849557",
             roleId: "1517580278376435882"
         }
+    },
+       shoptop: "https://cdn.discordapp.com/attachments/1517876909076123799/1518678456458674367/HOURP_Banners_1.png?ex=6a3acb07&is=6a397987&hm=52b3f19367d53a5791bbd83d3d4a81cfe3be60e779b6c1148ec4ba244d0d7c90",
+
+    shopbottom: "https://cdn.discordapp.com/attachments/1517876909076123799/1517877001501806653/Untitled_design_70.png?ex=6a37e09d&is=6a368f1d&hm=5a3ed57e6d4eb00d9911a6e632b665ce4087bd263c555edcf2191976b9f251bb",
+
+    shopPanelChannel: "1515512994606616609",
+
+    shopCategories: {
+        swords: {
+            categoryId: "1515514456694849557",
+            roleId: "1515511591473254471"
+        },
+
+        v4: {
+            categoryId: "1515514456694849557",
+            roleId: "1517580278376435882"
+        },
+
+        raids: {
+            categoryId: "1515514456694849557",
+            roleId: "1517580278376435882"
+        }
     }
 };
