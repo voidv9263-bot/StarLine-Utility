@@ -31,7 +31,7 @@ module.exports = {
 
         if (interaction.isStringSelectMenu()) {
 
-            if (interaction.customId !== "ticket_create") return;
+            if (interaction.customId !== "shop_create") return;
 
             let categoryId;
             let roleId;
@@ -41,22 +41,22 @@ module.exports = {
             // CATEGORY TYPES
             // =========================
 
-            if (interaction.values[0] === "general") {
-                categoryId = config.ticketCategories.general.categoryId;
-                roleId = config.ticketCategories.general.roleId;
-                ticketName = "general";
+            if (interaction.values[0] === "swords") {
+                categoryId = config.shopCategories.swords.categoryId;
+                roleId = config.shopCategories.swords.roleId;
+                ticketName = "swords";
             }
 
-            if (interaction.values[0] === "developer") {
-                categoryId = config.ticketCategories.developer.categoryId;
-                roleId = config.ticketCategories.developer.roleId;
-                ticketName = "developer";
+            if (interaction.values[0] === "v4") {
+                categoryId = config.shopCategories.v4.categoryId;
+                roleId = config.shopCategories.v4.roleId;
+                ticketName = "v4";
             }
 
-            if (interaction.values[0] === "bugreport") {
-                categoryId = config.ticketCategories.bugreport.categoryId;
-                roleId = config.ticketCategories.bugreport.roleId;
-                ticketName = "bugreport";
+            if (interaction.values[0] === "raids") {
+                categoryId = config.shopCategories.raids.categoryId;
+                roleId = config.shopCategories.raids.roleId;
+                ticketName = "raids";
             }
 
             // =========================
@@ -134,7 +134,7 @@ module.exports = {
                 .addMediaGalleryComponents(
                     new MediaGalleryBuilder().addItems({
                         media: {
-                            url: config.tickettop || config.topBanner
+                            url: config.shoptop
                         }
                     })
                 )
@@ -151,8 +151,7 @@ While you wait, please provide the following information:
 
 • Roblox Username
 • Discord Username
-• Reason for Opening the Ticket
-• Any Relevant Screenshots or Evidence
+• What you want 
 
 -# Please be patient and avoid pinging staff unnecessarily. We will assist you as soon as someone is available.`
                     )
@@ -165,7 +164,7 @@ While you wait, please provide the following information:
                 .addMediaGalleryComponents(
                     new MediaGalleryBuilder().addItems({
                         media: {
-                            url: config.ticketbottom || config.bottomBanner
+                            url: config.shopbottom
                         }
                     })
                 );
@@ -256,7 +255,7 @@ While you wait, please provide the following information:
                             .addMediaGalleryComponents(
                                 new MediaGalleryBuilder().addItems({
                                     media: {
-                                        url: config.tickettop || config.topBanner
+                                        url: config.shoptop || config.topBanner
                                     }
                                 })
                             )
@@ -284,7 +283,7 @@ While you wait, please provide the following information:
                             .addMediaGalleryComponents(
                                 new MediaGalleryBuilder().addItems({
                                     media: {
-                                        url: config.ticketbottom || config.bottomBanner
+                                        url: config.shopbottom || config.bottomBanner
                                     }
                                 })
                             );
@@ -328,7 +327,7 @@ While you wait, please provide the following information:
                                 .addMediaGalleryComponents(
                                     new MediaGalleryBuilder().addItems({
                                         media: {
-                                            url: config.tickettop || config.topBanner
+                                            url: config.shoptop || config.topBanner
                                         }
                                     })
                                 )
@@ -355,7 +354,7 @@ While you wait, please provide the following information:
                                 .addMediaGalleryComponents(
                                     new MediaGalleryBuilder().addItems({
                                         media: {
-                                            url: config.ticketbottom || config.bottomBanner
+                                            url: config.shopbottom || config.bottomBanner
                                         }
                                     })
                                 );
@@ -475,7 +474,7 @@ While you wait, please provide the following information:
                     .addMediaGalleryComponents(
                         new MediaGalleryBuilder().addItems({
                             media: {
-                                url: config.tickettop || config.topBanner
+                                url: config.shoptop || config.topBanner
                             }
                         })
                     )
@@ -502,7 +501,7 @@ While you wait, please provide the following information:
                     .addMediaGalleryComponents(
                         new MediaGalleryBuilder().addItems({
                             media: {
-                                url: config.ticketbottom || config.bottomBanner
+                                url: config.shopbottom || config.bottomBanner
                             }
                         })
                     );
@@ -546,7 +545,7 @@ While you wait, please provide the following information:
                         .addMediaGalleryComponents(
                             new MediaGalleryBuilder().addItems({
                                 media: {
-                                    url: config.tickettop || config.topBanner
+                                    url: config.shoptop || config.topBanner
                                 }
                             })
                         )
@@ -575,7 +574,7 @@ Thank you for opening a ticket.`
                         .addMediaGalleryComponents(
                             new MediaGalleryBuilder().addItems({
                                 media: {
-                                    url: config.ticketbottom || config.bottomBanner
+                                    url: config.shopbottom || config.bottomBanner
                                 }
                             })
                         );
