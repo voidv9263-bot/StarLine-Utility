@@ -77,16 +77,6 @@ module.exports = {
                     .setLabel("General Support")
                     .setDescription("Open a general support ticket")
                     .setValue("general"),
-
-                new StringSelectMenuOptionBuilder()
-                    .setLabel("Developer Support")
-                    .setDescription("Open a developer support ticket")
-                    .setValue("developer"),
-
-                new StringSelectMenuOptionBuilder()
-                    .setLabel("Bug Report")
-                    .setDescription("Open a Bug Report ticket")
-                    .setValue("bugreport")
             );
 
         const selectRow = new ActionRowBuilder().addComponents(select);
@@ -113,26 +103,11 @@ module.exports = {
             // TEXT
             .addTextDisplayComponents(
                 new TextDisplayBuilder().setContent(
-`# StarLine Support
+`# Royal Dominion Support
 
-Welcome to the StarLine Support Server!
+Welcome to the Royal Dominion Support!
 
-Need help with StarLine? Open a support ticket, and our team will assist you as soon as possible.
-
-Use tickets for:
-• Bot setup and configuration
-• to Report bugs or issues do /bug-report
-• Command assistance
-• Feature requests and suggestions
-• Questions about StarLine's features
-• General support
-
-Before opening a ticket:
-• Clearly explain your issue.
-• Include screenshots or error messages if possible.
-• Be respectful and patient while waiting for a response.
-
-Click the button below to create a private support ticket. A member of the StarLine support team will be with you shortly. ✨`
+Need help with Royal Dominion? Open a support ticket, and our team will assist you as soon as possible.`
                 )
             )
 
