@@ -89,7 +89,7 @@ module.exports = {
             .addMediaGalleryComponents(
                 new MediaGalleryBuilder().addItems({
                     media: {
-                        url: config.shopBanner
+                        url: config.shopbottom
                     }
                 })
             );
