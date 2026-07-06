@@ -47,18 +47,6 @@ module.exports = {
                 ticketName = "general";
             }
 
-            if (interaction.values[0] === "developer") {
-                categoryId = config.ticketCategories.developer.categoryId;
-                roleId = config.ticketCategories.developer.roleId;
-                ticketName = "developer";
-            }
-
-            if (interaction.values[0] === "bugreport") {
-                categoryId = config.ticketCategories.bugreport.categoryId;
-                roleId = config.ticketCategories.bugreport.roleId;
-                ticketName = "bugreport";
-            }
-
             // =========================
             // CHECK EXISTING TICKET
             // =========================
