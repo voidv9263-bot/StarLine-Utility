@@ -1,9 +1,9 @@
 const { Events } = require('discord.js');
 
-const GUILD_ID = '1515508593460379771';
-const WELCOME_CHANNEL_ID = '1515508593988731003';
-const WELCOME_ROLE_ID = '1515511930947895347';
-const DASHBOARD_LINK = 'https://discord.com/channels/1515508593460379771/1515512340886323201';
+const GUILD_ID = '1461496694645588011';
+const WELCOME_CHANNEL_ID = '1523690156220092568';
+const WELCOME_ROLE_ID = '1523688929629442078';
+const DASHBOARD_LINK = 'https://discord.com/channels/1461496694645588011/1523687846953746545';
 
 module.exports = {
     name: Events.GuildMemberAdd,
@@ -53,7 +53,7 @@ module.exports = {
                                 style: 2,
                                 label: `${memberCount}`,
                                 emoji: {
-                                    id: '1517888765274882240',
+                                    id: '1523702052285583360',
                                     name: 'starline'
                                 },
                                 custom_id: 'member_count',
