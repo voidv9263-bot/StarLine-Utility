@@ -68,7 +68,7 @@ module.exports = {
             // MAIN TEXT
             .addTextDisplayComponents(
                 new TextDisplayBuilder().setContent(
-`# StarLine Rules
+`# Royal Dominion Rules
 
 **1. Advertising**Advertising or self-promotion is not allowed without staff approval. This includes other servers, services, products, or personal content.
 
