@@ -8,7 +8,6 @@ const {
     MediaGalleryBuilder,
     TextDisplayBuilder,
     SeparatorBuilder,
-    ActionRowBuilder,
     ButtonBuilder,
     ButtonStyle,
 
@@ -77,7 +76,7 @@ module.exports = {
             .addOptions(
                 new StringSelectMenuOptionBuilder()
                     .setLabel("Swords and Guns")
-                    .setDescription("Purchase swords")
+                    .setDescription("Purchase swords and guns")
                     .setValue("swords"),
 
                 new StringSelectMenuOptionBuilder()
@@ -91,8 +90,6 @@ module.exports = {
                     .setValue("raids")
             );
 
-        const selectRow = new ActionRowBuilder().addComponents(select);
-
         // =========================
         // PRICES BUTTON
         // =========================
@@ -101,8 +98,6 @@ module.exports = {
             .setCustomId("shop_prices")
             .setLabel("Prices")
             .setStyle(ButtonStyle.Secondary);
-
-        const buttonRow = new ActionRowBuilder().addComponents(pricesButton);
 
         // =========================
         // V2 CONTAINER
@@ -132,15 +127,15 @@ Welcome to the Royal Dominion Shop!
 
 Purchase our in-game services quickly and securely by opening a shop ticket.
 
-Available Categories:
-• Swords and guns
+## Available Categories
+• Swords and Guns
 • V4 Services
 • Raids
 
-Before opening a ticket:
+## Before Opening a Ticket
 • Select the correct category.
 • Explain exactly what you'd like to purchase.
-• Wait for someone to assist you.
+• Wait for a staff member to assist you.
 • Payments are handled only through official staff.
 
 Use the menu below to open a private shop ticket.
@@ -154,10 +149,10 @@ Need to see our pricing first? Click the **Prices** button below.`
             )
 
             // SELECT MENU
-            .addActionRowComponents(selectRow)
+            .addActionRowComponents(select)
 
             // PRICES BUTTON
-            .addActionRowComponents(buttonRow)
+            .addActionRowComponents(pricesButton)
 
             .addSeparatorComponents(
                 new SeparatorBuilder()
@@ -195,4 +190,3 @@ Need to see our pricing first? Click the **Prices** button below.`
         console.log("Shop panel sent.");
     }
 };
-```
