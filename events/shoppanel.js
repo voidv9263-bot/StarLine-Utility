@@ -127,9 +127,17 @@ module.exports = {
                 new TextDisplayBuilder().setContent(
 `# Royal Dominion Shop
 
-Welcome to the Royal Dominion Shop!
+Welcome to the Royal Dominion Shop!|
 
 Purchase services quickly and securely by opening a shop ticket.
+
+Cashapps
+[ydktrey Cashapp](https://cash.app/$treyneverlackin)
+[Johns Cashapp](https://cash.app/$pikebentley)
+
+Robloxs
+MarshallZL1
+pikebentley
 
 ## Available Categories
 • Swords and Guns
