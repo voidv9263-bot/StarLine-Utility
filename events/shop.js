@@ -44,7 +44,7 @@ module.exports = {
             if (interaction.values[0] === "swords") {
                 categoryId = config.shopCategories.swords.categoryId;
                 roleId = config.shopCategories.swords.roleId;
-                ticketName = "swords";
+                ticketName = "swords-gun";
             }
 
             if (interaction.values[0] === "v4") {
