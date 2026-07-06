@@ -131,13 +131,13 @@ Welcome to the Royal Dominion Shop!|
 
 Purchase services quickly and securely by opening a shop ticket.
 
-Cashapps
+**Cashapps
 [ydktrey Cashapp](https://cash.app/$treyneverlackin)
 [Johns Cashapp](https://cash.app/$pikebentley)
 
 Robloxs
 MarshallZL1
-pikebentley
+pikebentley**
 
 ## Available Categories
 • Swords and Guns
