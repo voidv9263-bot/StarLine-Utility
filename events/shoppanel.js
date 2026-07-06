@@ -9,6 +9,8 @@ const {
     TextDisplayBuilder,
     SeparatorBuilder,
     ActionRowBuilder,
+    ButtonBuilder,
+    ButtonStyle,
 
     MessageFlags
 } = require("discord.js");
@@ -29,7 +31,7 @@ module.exports = {
             .catch(() => null);
 
         if (!channel) {
-            return console.log("shop panel channel not found.");
+            return console.log("Shop panel channel not found.");
         }
 
         // =========================
@@ -60,36 +62,47 @@ module.exports = {
                 .catch(() => null);
 
             if (existing) {
-                console.log("shop panel already exists.");
+                console.log("Shop panel already exists.");
                 return;
             }
         }
 
         // =========================
-        // SELECT MENU
+        // SHOP SELECT MENU
         // =========================
 
         const select = new StringSelectMenuBuilder()
             .setCustomId("shop_create")
-            .setPlaceholder("Select a shop category")
+            .setPlaceholder("Select a shop category...")
             .addOptions(
                 new StringSelectMenuOptionBuilder()
-                    .setLabel("Swords")
-                    .setDescription("Open a Sword Shop ticket")
+                    .setLabel("⚔️ Swords")
+                    .setDescription("Purchase swords")
                     .setValue("swords"),
 
                 new StringSelectMenuOptionBuilder()
-                    .setLabel("V4")
-                    .setDescription("Open a V4 shopticket")
+                    .setLabel("🔥 V4")
+                    .setDescription("Purchase V4 services")
                     .setValue("v4"),
 
                 new StringSelectMenuOptionBuilder()
-                    .setLabel("Raids")
-                    .setDescription("Open a Raid Shop ticket")
+                    .setLabel("🏝️ Raids")
+                    .setDescription("Purchase raid services")
                     .setValue("raids")
             );
 
         const selectRow = new ActionRowBuilder().addComponents(select);
+
+        // =========================
+        // PRICES BUTTON
+        // =========================
+
+        const pricesButton = new ButtonBuilder()
+            .setCustomId("shop_prices")
+            .setLabel("💰 Prices")
+            .setStyle(ButtonStyle.Secondary);
+
+        const buttonRow = new ActionRowBuilder().addComponents(pricesButton);
 
         // =========================
         // V2 CONTAINER
@@ -113,26 +126,26 @@ module.exports = {
             // TEXT
             .addTextDisplayComponents(
                 new TextDisplayBuilder().setContent(
-`# StarLine Support
+`# Royal Dominion Shop
 
-Welcome to the StarLine Support Server!
+Welcome to the Royal Dominion Shop!
 
-Need help with StarLine? Open a support ticket, and our team will assist you as soon as possible.
+Purchase our in-game services quickly and securely by opening a shop ticket.
 
-Use tickets for:
-• Bot setup and configuration
-• to Report bugs or issues do /bug-report
-• Command assistance
-• Feature requests and suggestions
-• Questions about StarLine's features
-• General support
+Available Categories:
+• ⚔️ Swords
+• 🔥 V4 Services
+• 🏝️ Raids
 
 Before opening a ticket:
-• Clearly explain your issue.
-• Include screenshots or error messages if possible.
-• Be respectful and patient while waiting for a response.
+• Select the correct category.
+• Explain exactly what you'd like to purchase.
+• Wait for someone to assist you.
+• Payments are handled only through official staff.
 
-Click the button below to create a private support ticket. A member of the StarLine support team will be with you shortly. ✨`
+Use the menu below to open a private shop ticket.
+
+Need to see our pricing first? Click the **💰 Prices** button below.`
                 )
             )
 
@@ -140,8 +153,11 @@ Click the button below to create a private support ticket. A member of the StarL
                 new SeparatorBuilder()
             )
 
-            // SELECT MENU INSIDE CONTAINER
+            // SELECT MENU
             .addActionRowComponents(selectRow)
+
+            // PRICES BUTTON
+            .addActionRowComponents(buttonRow)
 
             .addSeparatorComponents(
                 new SeparatorBuilder()
@@ -167,9 +183,16 @@ Click the button below to create a private support ticket. A member of the StarL
 
         fs.writeFileSync(
             savePath,
-            JSON.stringify({ messageId: message.id }, null, 4)
+            JSON.stringify(
+                {
+                    messageId: message.id
+                },
+                null,
+                4
+            )
         );
 
-        console.log("Ticket panel sent.");
+        console.log("Shop panel sent.");
     }
 };
+```
