@@ -25,11 +25,11 @@ module.exports = {
     async execute(client) {
 
         const channel = await client.channels
-            .fetch(config.ticketPanelChannel)
+            .fetch(config.shopPanelChannel)
             .catch(() => null);
 
         if (!channel) {
-            return console.log("Ticket panel channel not found.");
+            return console.log("shop panel channel not found.");
         }
 
         // =========================
@@ -42,7 +42,7 @@ module.exports = {
             fs.mkdirSync(dataFolder);
         }
 
-        const savePath = path.join(dataFolder, "ticketPanel.json");
+        const savePath = path.join(dataFolder, "shopPanel.json");
 
         let savedData = null;
 
@@ -60,7 +60,7 @@ module.exports = {
                 .catch(() => null);
 
             if (existing) {
-                console.log("Ticket panel already exists.");
+                console.log("shop panel already exists.");
                 return;
             }
         }
@@ -70,23 +70,23 @@ module.exports = {
         // =========================
 
         const select = new StringSelectMenuBuilder()
-            .setCustomId("ticket_create")
-            .setPlaceholder("Select a ticket category")
+            .setCustomId("shop_create")
+            .setPlaceholder("Select a shop category")
             .addOptions(
                 new StringSelectMenuOptionBuilder()
-                    .setLabel("General Support")
-                    .setDescription("Open a general support ticket")
-                    .setValue("general"),
+                    .setLabel("Swords")
+                    .setDescription("Open a Sword Shop ticket")
+                    .setValue("swords"),
 
                 new StringSelectMenuOptionBuilder()
-                    .setLabel("Developer Support")
-                    .setDescription("Open a developer support ticket")
-                    .setValue("developer"),
+                    .setLabel("V4")
+                    .setDescription("Open a V4 shopticket")
+                    .setValue("v4"),
 
                 new StringSelectMenuOptionBuilder()
-                    .setLabel("Bug Report")
-                    .setDescription("Open a Bug Report ticket")
-                    .setValue("bugreport")
+                    .setLabel("Raids")
+                    .setDescription("Open a Raid Shop ticket")
+                    .setValue("raids")
             );
 
         const selectRow = new ActionRowBuilder().addComponents(select);
@@ -101,7 +101,7 @@ module.exports = {
             .addMediaGalleryComponents(
                 new MediaGalleryBuilder().addItems({
                     media: {
-                        url: config.tickettop
+                        url: config.shoptop
                     }
                 })
             )
@@ -151,7 +151,7 @@ Click the button below to create a private support ticket. A member of the StarL
             .addMediaGalleryComponents(
                 new MediaGalleryBuilder().addItems({
                     media: {
-                        url: config.bottomBanner
+                        url: config.shopBanner
                     }
                 })
             );
