@@ -1,5 +1,5 @@
 const {
-    Events,
+       Events,
 
     StringSelectMenuBuilder,
     StringSelectMenuOptionBuilder,
@@ -9,6 +9,9 @@ const {
     TextDisplayBuilder,
     SeparatorBuilder,
     ActionRowBuilder,
+
+    ButtonBuilder,
+    ButtonStyle,
 
     MessageFlags
 } = require("discord.js");
@@ -79,7 +82,18 @@ module.exports = {
                     .setValue("general"),
             );
 
-        const selectRow = new ActionRowBuilder().addComponents(select);
+       const selectRow = new ActionRowBuilder().addComponents(select);
+
+        // =========================
+        // PRICES BUTTON
+        // =========================
+
+        const pricesButton = new ButtonBuilder()
+            .setCustomId("guidelines")
+            .setLabel("GuideLine")
+            .setStyle(ButtonStyle.Secondary);
+
+        const buttonRow = new ActionRowBuilder().addComponents(informationButton);
 
         // =========================
         // V2 CONTAINER
@@ -103,24 +117,26 @@ module.exports = {
             // TEXT
             .addTextDisplayComponents(
                 new TextDisplayBuilder().setContent(
-`# Royal Dominion Support
+`# Royal Dominion Information
 
-Welcome to the Royal Dominion Support!
+Welcome to the Royal Dominion!
+The best place to get any Blox Fruit accounts. Get stacked accounts, max-level everything you need, for a cheap price.
 
-Need help with Royal Dominion? Open a support ticket, and our team will assist you as soon as possible.`
-                )
+Royal Dominion was founded on <t:1783345620:D> by <@1457565195483353120> and <@961048718612774922>. They opened Royal Dominion to help people get stuff so they don't have to grind.
+`)
             )
 
-            .addSeparatorComponents(
-                new SeparatorBuilder()
-            )
+            .addSeparatorComponents(new SeparatorBuilder())
 
-            // SELECT MENU INSIDE CONTAINER
+            // SELECT MENU ROW (MUST BE ACTION ROW)
+            .addActionRowComponents(buttonRow)
+             
+            .addSeparatorComponents(new SeparatorBuilder())
+
+            // BUTTON ROW (MUST BE SEPARATE ACTION ROW)
             .addActionRowComponents(selectRow)
 
-            .addSeparatorComponents(
-                new SeparatorBuilder()
-            )
+            .addSeparatorComponents(new SeparatorBuilder())
 
             // BOTTOM BANNER
             .addMediaGalleryComponents(
@@ -136,10 +152,12 @@ Need help with Royal Dominion? Open a support ticket, and our team will assist y
         // =========================
 
         const message = await channel.send({
-            flags: MessageFlags.IsComponentsV2,
-            components: [container]
-        });
-
+    flags: MessageFlags.IsComponentsV2,
+    components: [container],
+    allowedMentions: {
+        parse: [] // Prevents all mentions (@everyone, @here, users, roles)
+    }
+});
         fs.writeFileSync(
             savePath,
             JSON.stringify({ messageId: message.id }, null, 4)
