@@ -88,7 +88,7 @@ module.exports = {
         // PRICES BUTTON
         // =========================
 
-        const pricesButton = new ButtonBuilder()
+        const informationButton = new ButtonBuilder()
             .setCustomId("guidelines")
             .setLabel("GuideLine")
             .setStyle(ButtonStyle.Secondary);
