@@ -18,7 +18,7 @@ module.exports = {
 
     ticketbottom: "https://cdn.discordapp.com/attachments/1466593843049664522/1523703736872992879/Untitled_design_75.png?ex=6a4d132f&is=6a4bc1af&hm=c378803d0ed79d3dabe8cf0a23d7a16c4cb79e437f9c730a30c357561fbe8e54",
 
-    ticketPanelChannel: "1523690131935072436",
+    ticketPanelChannel: "1523689784260956170",
 
     ticketCategories: {
         general: {
